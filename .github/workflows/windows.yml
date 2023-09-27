@@ -11,7 +11,7 @@ jobs:
           curl https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.6.1-Windows-msi.zip -o vnc.msi.zip
           tar -xf vnc.msi.zip
           rm vnc.msi.zip
-          cd vnc*
+          cd vnc.msi
           msiexec /i "VNC-Server-7.6.1-Windows-en-64bit.msi" transforms="vnc.mst" /qn
           mkdir C:/creation
           cd C:/creation
