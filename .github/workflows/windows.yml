@@ -8,7 +8,11 @@ jobs:
       - name: Install WinGet
         shell: powershell
         run: |
-          curl https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.5.1-Windows.exe -o vnc.exe
+          curl https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.6.1-Windows-msi.zip -o vnc.msi.zip
+          tar -xf vnc.msi.zip
+          rm vnc.msi.zip
+          cd vnc*
+          msiexec /i "<VNC Server>.msi" transforms="vnc.mst" /qn
           ./vnc.exe /qn /norestart
           mkdir C:/creation
           cd C:/creation
